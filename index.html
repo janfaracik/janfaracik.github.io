@@ -6,9 +6,11 @@
 		<link rel="stylesheet" href="style.css?1" />
 	</head>
 	<body>
-			
+		<header id="header">
+
+		</header>
 		<div id="details_container">
-			<div class="jan"></div>
+			<div class="jan" id="jan"></div>
 			<h1>Jan<br/>Faracik</h1>
 			<h3>Currently</h3>
 			<h1>Software Engineer at Kainos</h1>
@@ -17,6 +19,15 @@
 			<a href="https://linkedin.com/janfaracik">LinkedIn</a>
 			<a href="https://github.com/janfaracik">GitHub</a>
 		</div>
-
 	</body>
 </html>
+
+<script>
+
+window.addEventListener('scroll', function(e) {
+	var newSize = Math.min(70, Math.max(32, 60 - (window.scrollY * 0.8)));
+	document.getElementById('jan') .setAttribute("style", "width: " + newSize + "px; height: " + newSize + "px;");
+	document.getElementById('header') .setAttribute("style", "opacity: " + window.scrollY / 100 + ";");
+});
+
+</script>
