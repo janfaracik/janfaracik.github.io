@@ -2,7 +2,7 @@
 	--background-color: 20, 20, 20;
 	--foreground-color: 245, 245, 245;
 	--background-color: 254, 254, 254;
-	--foreground-color: 5, 5, 5;
+	--foreground-color: 10, 10, 10;
 	--max-width: 900px;
 	--padding: 30px;
     --border-radius: 12px;
@@ -53,6 +53,7 @@ header {
     right: 0;
     background-color: rgba(var(--background-color), 0.8);
     height: calc(var(--padding) * 3);
+    border-bottom: 1px solid rgba(var(--foreground-color), 0.05);
     z-index: 10;
     opacity: 0;
 }
@@ -62,10 +63,41 @@ header:after {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 0;
-    height: 1px;
+    bottom: -50px;
+    height: 50px;
     z-index: 1;
-    background-color: rgba(var(--foreground-color), 0.075);
+    background: linear-gradient(rgba(var(--foreground-color), 0.03), transparent);
+    pointer-events: none;
+}
+
+#header_inside {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    max-width: var(--max-width);
+    padding-right: var(--padding);
+}
+
+#header_inside a {
+    width: var(--padding);
+    height: var(--padding);
+    float: right;
+    margin-top: var(--padding);
+    background: transparent;
+    opacity: .2;
+    transition: 0.2s ease;
+}
+
+#header_inside a:hover {
+    opacity: .3;
+}
+
+#header_inside a:active {
+    opacity: .4;
+}
+
+#header_inside a path {
+    fill: rgb(var(--foreground-color));
 }
 
 .jan {
