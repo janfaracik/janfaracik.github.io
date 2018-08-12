@@ -13,7 +13,7 @@
 		</script>
 		<header id="header">
 			<div id="header_inside">
-				<a onclick="scrollToTop()">
+				<a class="interaction" onclick="scrollToTop()">
 					<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 						<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 							<path d="M16,32 C7.163444,32 0,24.836556 0,16 C0,7.163444 7.163444,0 16,0 C24.836556,0 32,7.163444 32,16 C32,24.836556 24.836556,32 16,32 Z M16.0018223,14.411633 L21.2948666,19.7063139 C21.6866352,20.0978954 22.3201335,20.0978954 22.7077343,19.7063139 C23.099503,19.3147325 23.0953352,18.681537 22.7077343,18.2899555 L16.7103401,12.2912612 C16.3310747,11.9121771 15.722583,11.9038455 15.3308144,12.2621009 L9.2917426,18.2857898 C9.09585828,18.4815805 9,18.7398576 9,18.993969 C9,19.2480803 9.09585828,19.5063574 9.2917426,19.7021482 C9.68351123,20.0937296 10.3170094,20.0937296 10.7046103,19.7021482 L16.0018223,14.411633 Z" id="Combined-Shape" fill="#D8D8D8" fill-rule="nonzero"></path>
@@ -40,7 +40,7 @@
 			<div>
 				Powered by GitHub.
 			</div>
-			<a class="bulb" onclick="toggleTheme()">
+			<a class="bulb interaction" onclick="toggleTheme()">
 				<svg width="11px" height="16px" viewBox="0 0 11 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 						<g id="ios-bulb" fill="#000000" fill-rule="nonzero">
@@ -67,6 +67,6 @@
 	window.addEventListener('scroll', function(e) {
 		var newSize = Math.min(70, Math.max(32, 60 - (window.scrollY * 0.3)));
 		document.getElementById('jan') .setAttribute("style", "width: " + newSize + "px; height: " + newSize + "px;");
-		document.getElementById('header') .setAttribute("style", "opacity: " + window.scrollY / 100 + ";");
+		document.getElementById('header') .setAttribute("style", "opacity: " + Math.min(window.scrollY / 100, 1) + ";");
 	});
 </script>

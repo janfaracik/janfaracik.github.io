@@ -94,15 +94,19 @@ header:after {
     margin-top: var(--padding);
     background: transparent;
     opacity: .15;
-    transition: 0.2s ease;
+    transition: transform 0.2s ease;
 }
 
-#header_inside a:hover {
+.dark #header_inside a {
     opacity: .3;
 }
 
-#header_inside a:active {
-    opacity: .4;
+.interaction:hover {
+    transform: scale(.95);
+}
+
+.interaction:active {
+    transform: scale(.9);
 }
 
 #header_inside a path {
@@ -121,6 +125,10 @@ header:after {
     opacity: .15;
     border-radius: 100%;
     z-index: -1;
+}
+
+.dark .jan:before {
+    opacity: .2;
 }
 
 .jan {
@@ -218,9 +226,10 @@ footer {
     width: 100%;
     margin: auto;
     font-weight: 600;
-    opacity: .5;
+    opacity: .3;
     display: grid;
     grid-template-columns: 1fr auto;
+    user-select: none;
 }
 
 .bulb path {
