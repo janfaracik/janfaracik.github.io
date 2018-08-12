@@ -1,6 +1,4 @@
 :root {
-	--background-color: 20, 20, 20;
-	--foreground-color: 245, 245, 245;
 	--background-color: 254, 254, 254;
 	--foreground-color: 10, 10, 10;
 	--max-width: 900px;
@@ -19,6 +17,11 @@
     --twitter-color: 29, 161, 243;
     --linkedin-color: 0, 119, 181;
     --github-color: #4078c0;
+}
+
+.dark {
+	--background-color: 20, 20, 20;
+	--foreground-color: 245, 245, 245;
 }
 
 html, body {
@@ -72,6 +75,10 @@ header:after {
     pointer-events: none;
 }
 
+.dark header:after {
+    background: transparent;
+}
+
 #header_inside {
     width: 100%;
     height: 100%;
@@ -86,7 +93,7 @@ header:after {
     float: right;
     margin-top: var(--padding);
     background: transparent;
-    opacity: .2;
+    opacity: .15;
     transition: 0.2s ease;
 }
 
@@ -102,17 +109,44 @@ header:after {
     fill: rgb(var(--foreground-color));
 }
 
+.jan:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-backdrop-filter: blur(10px);
+    background: rgb(var(--foreground-color));
+    opacity: .15;
+    border-radius: 100%;
+    z-index: -1;
+}
+
 .jan {
     position: sticky;
     position: -webkit-sticky;
     top: var(--padding);
     width: 60px;
     height: 60px;
-    -webkit-backdrop-filter: blur(10px);
-    background-image: url(assets/jan.png?1);
-    background-size: cover;
     z-index: 10;
     transition: 0s !important;
+}
+
+.jan:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url(assets/jan.png);
+    background-size: cover;
+    filter: drop-shadow(0 0 1px white);
+}
+
+.dark .jan:after {
+    filter: drop-shadow(0 0 1px black);
 }
 
 /* Social Media */
@@ -146,7 +180,7 @@ a[href^="https://github"] {
     display: block;
     font-size: var(--large-size);
     text-decoration: none;
-    transition: 0.2s ease;
+    transition: font-size 0.2s ease, padding 0.2s ease;
 }
 
 #details_container a:hover {
@@ -160,10 +194,39 @@ h3 {
     margin-top: 90px;
 }
 
+#fadeout {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 120px;
+    background: linear-gradient(rgba(var(--background-color), 0), rgb(var(--background-color)));
+    opacity: .4;
+}
+
 @media screen and (max-width: 750px) {
     :root {
         --large-size: 12vw;
         --medium-size: 8vw;
         --small-size: 4vw;
     }
+}
+
+footer {
+    padding: var(--padding);
+    max-width: var(--max-width);
+    width: 100%;
+    margin: auto;
+    font-weight: 600;
+    opacity: .5;
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+.bulb path {
+    fill: rgb(var(--foreground-color));
+}
+
+.bulb_active {
+    filter: drop-shadow(0 0 5px yellow);
 }
