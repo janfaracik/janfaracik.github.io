@@ -11,12 +11,12 @@
     --small-size: 25px;
 
     /* Brands */
-    --paleta-color: #FF5294;
-    --scalemate-color: rgb(248, 179, 28);
+    --paleta-color: 255, 81, 148;
+    --scalemate-color: 248, 179, 28;
     --facebook-color: 29, 161, 243;
     --twitter-color: 29, 161, 243;
     --linkedin-color: 0, 119, 181;
-    --github-color: #4078c0;
+    --github-color: 63, 118, 191;
 }
 
 .dark {
