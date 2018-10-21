@@ -1,5 +1,6 @@
 :root {
 	--accent-color: var(--scalemate-color);
+	--max-width: 800px;
 }
 
 #details_container {
@@ -38,8 +39,8 @@ p {
 
 #landing_images {
 	position: relative;
-	min-height: 120vmax;
-	min-width: 120vmax;
+	min-height: 130vmax;
+	min-width: 130vmax;
 	position: absolute;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -71,7 +72,7 @@ p {
 	overflow: hidden;
 }
 
-#landing_title > * {
+#landing_title>* {
 	animation-name: scale_in;
 	animation-duration: 2s;
 	animation-fill-mode: forwards;
@@ -84,6 +85,8 @@ p {
 	transform-origin: 50% 100%;
 	width: 8vmax;
 	height: 8vmax;
+	min-width: 100px;
+	min-height: 100px;
 }
 
 #landing_title :nth-child(2) {
@@ -112,14 +115,6 @@ path {
 	fill: currentColor;
 }
 
-main {
-	position: relative;
-	box-shadow: 0 -40px 40px rgba(0, 0, 0, 0.1), 0 -4px 10px rgba(0, 0, 0, 0.08);
-	height: 1000px;
-	background-color: rgb(var(--background-color));
-	z-index: 4;
-}
-
 @keyframes fade_in {
 	0% {
 		opacity: 0;
@@ -141,5 +136,15 @@ main {
 
 	100% {
 		opacity: 1;
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+	#landing_title :nth-child(2) {
+		font-size: 6vmax;
+	}
+
+	#landing_title :nth-child(3) {
+		font-size: 2vmax;
 	}
 }

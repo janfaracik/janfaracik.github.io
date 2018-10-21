@@ -35,10 +35,10 @@
 
 	<div id="landing">
 		<div id="landing_images">
-			<div class="image_box" style="background-image: url(assets/Cards/2.jpg);"></div>
-			<div class="image_box" style="background-image: url(assets/Cards/3.jpg); animation-delay: 0.6s;"></div>
-			<div class="image_box" style="background-image: url(assets/Cards/4.jpg);"></div>
-			<div class="image_box" style="background-image: url(assets/Cards/5.jpg); animation-delay: 0.6s;"></div>
+			<div class="image_box" style="background-image: url(assets/cards/2.jpg);"></div>
+			<div class="image_box" style="background-image: url(assets/cards/3.jpg); animation-delay: 0.6s;"></div>
+			<div class="image_box" style="background-image: url(assets/cards/4.jpg);"></div>
+			<div class="image_box" style="background-image: url(assets/cards/5.jpg); animation-delay: 0.6s;"></div>
 			<div id="landing_title">
 				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
 					<path fill-rule="evenodd" clip-rule="evenodd" d="M0,50c0,27.61,22.39,50,50,50s50-22.39,50-50S77.61,0,50,0S0,22.39,0,50z M26,26
@@ -47,14 +47,93 @@
 				<h1 id="title">Scalemate</h1>
 				<h5 id="subtitle">Super Simple Mass Image Scaler</h5>
 			</div>
-			<div class="image_box" style="background-image: url(assets/Cards/6.jpg); animation-delay: 0.6s;"></div>
-			<div class="image_box" style="background-image: url(assets/Cards/7.jpg);"></div>
-			<div class="image_box" style="background-image: url(assets/Cards/8.jpg); animation-delay: 0.6s;"></div>
-			<div class="image_box" style="background-image: url(assets/Cards/9.jpg);"></div>
+			<div class="image_box" style="background-image: url(assets/cards/6.jpg); animation-delay: 0.6s;"></div>
+			<div class="image_box" style="background-image: url(assets/cards/7.jpg);"></div>
+			<div class="image_box" style="background-image: url(assets/cards/8.jpg); animation-delay: 0.6s;"></div>
+			<div class="image_box" style="background-image: url(assets/cards/9.jpg);"></div>
 		</div>
+		<a id="landing_arrow" onclick="scrollToMain()">
+			<img class="interaction" src="../assets/arrow.png" alt="Tap to scroll down">
+		</a>
 	</div>
 
 	<main>
+
+		<section class="download_section">
+			<div class="download_section_inner">
+				<div class="vertical_centre">
+					<p>Scalemate is the easiest way to mass scale images.</p>
+				</div>
+				<div class="vertical_centre">
+					<a class="download_button interaction">Download</a>
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<div class="content">
+				<h5 class="whats_new">New in 2.0</h5>
+				<h1>Multiple Exports</h1>
+				<img src="assets/scalemate.png" alt="">
+				<p>"Technology" "required" for the coating and treatment of optical surfaces to achieve an 'optical thickness' uniformity of 99.5% or better for optical coatings 500 mm or more in diameter or major axis length and with a total loss (absorption
+					and scatter) of less than 5 x 10-3</p>
+			</div>
+		</section>
+
+		<section>
+			<div class="content">
+				<h5 class="whats_new">New in 2.0</h5>
+				<h1>Multiple Exports</h1>
+				<img src="assets/Points/Export.png" alt="">
+				<p>"Technology" "required" for the coating and treatment of optical surfaces to achieve an 'optical thickness' uniformity of 99.5% or better for optical coatings 500 mm or more in diameter or major axis length and with a total loss (absorption
+					and scatter) of less than 5 x 10-3</p>
+			</div>
+		</section>
+
+		<section>
+			<div class="content">
+				<h5 class="whats_new">New in 2.0</h5>
+				<h1>Multiple Exports</h1>
+				<img src="assets/Points/Export.png" alt="">
+				<p>a long curved fruit which grows in clusters and has soft pulpy flesh and yellow skin when ripe: a bunch of bananas.</p>
+			</div>
+		</section>
+
+		<section>
+			<div class="content">
+				<h5 class="whats_new">New in 2.0</h5>
+				<h1>Multiple Exports</h1>
+				<img src="assets/Points/Export.png" alt="">
+				<p>a long curved fruit which grows in clusters and has soft pulpy flesh and yellow skin when ripe: a bunch of bananas.</p>
+			</div>
+		</section>
+
+		<section>
+			<hr/>
+		</section>
+
+		<section>
+			<div class="content">
+				<h5>What else?</h5>
+				<h1>Multiple Windows</h1>
+				<h1>Fluent Design</h1>
+				<h1>Multiple Exports</h1>
+				<h1>Multiple Exports</h1>
+				<h1 style="margin: 0;">Multiple Exports</h1>
+			</div>
+		</section>
+
+		<section class="download_section">
+			<div class="download_section_inner">
+				<div class="vertical_centre">
+					<p>Scalemate is the easiest way to mass scale images.</p>
+				</div>
+				<div class="vertical_centre">
+					<a class="download_button interaction">Download</a>
+				</div>
+			</div>
+		</section>
+
 		<footer>
 			<div>
 				Powered by GitHub.
@@ -70,6 +149,7 @@
 				</svg>
 			</a>
 		</footer>
+
 	</main>
 
 </body>
@@ -81,6 +161,15 @@
 			behavior: 'smooth'
 		});
 	}
+
+	function scrollToMain() {
+		window.scroll({
+			top: window.innerHeight,
+			left: 0,
+			behavior: 'smooth'
+		});
+	}
+
 	function toggleTheme() {
 		localStorage.setItem("darkMode", document.body.classList.toggle("dark"));
 		var metaThemeColor = document.querySelector("meta[name=theme-color]");
