@@ -10,7 +10,7 @@
 	--medium-size: 45px;
 	--small-size: 25px;
 	--tiny-size: 14px;
-	/* Brands */
+	/* Colors */
 	--paleta-color: 255, 81, 148;
 	--scalemate-color: 248, 179, 28;
 	--facebook-color: 29, 161, 243;
@@ -135,7 +135,7 @@ footer {
 #landing {
 	position: relative;
 	width: 100vw;
-	height: 100vh;
+	height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -146,7 +146,7 @@ footer {
 /* Interaction effect */
 .interaction {
 	cursor: pointer;
-	transition: 0.2s ease;
+	transition: transform 0.2s ease;
 }
 
 .interaction:hover {
@@ -300,8 +300,8 @@ section:nth-of-type(2)::before {
 
 section img {
 	width: 100%;
-	background-color: red;
-	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15), 0 0 2px rgba(0, 0, 0, 0.1), 0 6px 8px rgba(0, 0, 0, 0.15);
+	background-color: rgba(var(--foreground-color), 0.1);
+	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15), 0 0 2px rgba(0, 0, 0, 0.1), 0 6px 14px rgba(0, 0, 0, 0.15);
 	transform: scaleX(1.1);
 	margin-top: 20px;
 	margin-bottom: calc(var(--padding) + 20px);
@@ -313,27 +313,35 @@ section h1 {
 	margin-top: 8px;
 }
 
-section h5 {
-	text-transform: uppercase;
-}
-
 section p {
 	font-size: 16px;
 	opacity: .8;
 	font-weight: normal;
 	line-height: 1.7;
-	margin-right: var(--padding);
 }
 
 section h5 {
+	position: relative;
 	font-size: 10px;
 	display: inline-block;
-	border-radius: 5px;
-	background-color: black;
-	color: white;
+	border-radius: 6px;
+	color: rgb(var(--foreground-color));
 	padding: 4px 6px;
-	background: gray;
+	background: rgba(var(--foreground-color), 0.2);
 	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+
+section h5::after {
+	position: absolute;
+	content: "";
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border: 1px solid rgb(var(--foreground-color));
+	border-radius: inherit;
+	opacity: .2;
 }
 
 section hr {
@@ -347,11 +355,13 @@ section hr {
 
 .whats_new {
 	margin-bottom: 0;
-	background: linear-gradient(45deg, red, purple, blue);
+	background: linear-gradient(45deg, red, blue);
+	color: white;
+	opacity: 1;
 }
 
 .download_section {
-	background-color: rgba(240, 240, 240, 0.9)!important;
+	background-color: rgba(240, 240, 240, 0.9) !important;
 	-webkit-backdrop-filter: contrast(2) saturate(2) blur(30px);
 	padding: var(--padding) 0;
 	border-top: 1px solid rgba(var(--foreground-color), 0.05);
@@ -364,7 +374,7 @@ section hr {
 }
 
 .dark .download_section {
-	background-color: rgba(50, 50, 50, 0.9)!important;
+	background-color: rgba(50, 50, 50, 0.9) !important;
 }
 
 .download_section_inner {
@@ -383,14 +393,27 @@ section hr {
 }
 
 .download_button {
+	position: relative;
 	display: inline-block;
 	padding: 0 var(--padding);
-	background-color: rgba(var(--foreground-color), 0.05);
+	background-color: rgba(var(--foreground-color), 0.075);
 	color: rgb(var(--foreground-color));
 	line-height: 46px;
 	border-radius: 23px;
 	font-size: 15px;
 	font-weight: 600;
+}
+
+.download_button::after {
+	position: absolute;
+	content: "";
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border: 1px solid rgb(var(--foreground-color));
+	border-radius: inherit;
+	opacity: .05;
 }
 
 #landing_arrow {
@@ -400,6 +423,29 @@ section hr {
 	animation-name: landing_arrow_slide;
 	animation-duration: 3s;
 	animation-iteration-count: infinite;
+}
+
+#landing_arrow svg {
+	fill: currentColor;
+	animation-name: landing_arrow_fade;
+	animation-duration: 2s;
+	animation-fill-mode: both;
+	animation-delay: 2.5s;
+	animation-timing-function: ease;
+}
+
+@keyframes landing_arrow_fade {
+	0% {
+		opacity: 0;
+		filter: blur(10px);
+		transform: scale(0.6) translateY(60px);
+	}
+
+	100% {
+		opacity: 0.5;
+		filter: blur(0px);
+		transform: scale(1) translateY(0px);
+	}
 }
 
 @keyframes landing_arrow_slide {
@@ -415,5 +461,3 @@ section hr {
 		transform: translateY(5px);
 	}
 }
-
-.

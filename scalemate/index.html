@@ -20,7 +20,7 @@
 
 	<header id="header">
 		<div id="header_inside">
-			<a href="file:///Users/janf/Documents/GitHub/janfaracik.github.io/index.html" class="jan interaction"></a>
+			<a href="../" class="jan interaction"></a>
 			<div></div>
 			<a class="interaction" onclick="scrollToTop()">
 				<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -35,10 +35,10 @@
 
 	<div id="landing">
 		<div id="landing_images">
-			<div class="image_box" style="background-image: url(assets/cards/2.jpg);"></div>
-			<div class="image_box" style="background-image: url(assets/cards/3.jpg); animation-delay: 0.6s;"></div>
-			<div class="image_box" style="background-image: url(assets/cards/4.jpg);"></div>
-			<div class="image_box" style="background-image: url(assets/cards/5.jpg); animation-delay: 0.6s;"></div>
+			<div class="image_box" style="background-image: url(assets/images/2.jpg);"></div>
+			<div class="image_box" style="background-image: url(assets/images/3.jpg); animation-delay: 0.6s;"></div>
+			<div class="image_box" style="background-image: url(assets/images/4.jpg);"></div>
+			<div class="image_box" style="background-image: url(assets/images/5.jpg); animation-delay: 0.6s;"></div>
 			<div id="landing_title">
 				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
 					<path fill-rule="evenodd" clip-rule="evenodd" d="M0,50c0,27.61,22.39,50,50,50s50-22.39,50-50S77.61,0,50,0S0,22.39,0,50z M26,26
@@ -47,13 +47,17 @@
 				<h1 id="title">Scalemate</h1>
 				<h5 id="subtitle">Super Simple Mass Image Scaler</h5>
 			</div>
-			<div class="image_box" style="background-image: url(assets/cards/6.jpg); animation-delay: 0.6s;"></div>
-			<div class="image_box" style="background-image: url(assets/cards/7.jpg);"></div>
-			<div class="image_box" style="background-image: url(assets/cards/8.jpg); animation-delay: 0.6s;"></div>
-			<div class="image_box" style="background-image: url(assets/cards/9.jpg);"></div>
+			<div class="image_box" style="background-image: url(assets/images/6.jpg); animation-delay: 0.6s;"></div>
+			<div class="image_box" style="background-image: url(assets/images/7.jpg);"></div>
+			<div class="image_box" style="background-image: url(assets/images/8.jpg); animation-delay: 0.6s;"></div>
+			<div class="image_box" style="background-image: url(assets/images/9.jpg);"></div>
 		</div>
 		<a id="landing_arrow" onclick="scrollToMain()">
-			<img class="interaction" src="../assets/arrow.png" alt="Tap to scroll down">
+			<svg width="40px" height="15px" viewBox="0 0 40 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				<g class="interaction">
+					<polygon points="4.00935808 1.42108547e-14 20 11.9929814 35.9906419 1.42108547e-14 40 1.42108547e-14 20 15 0 1.42108547e-14"></polygon>
+				</g>
+			</svg>
 		</a>
 	</div>
 
@@ -82,7 +86,6 @@
 
 		<section>
 			<div class="content">
-				<h5 class="whats_new">New in 2.0</h5>
 				<h1>Multiple Exports</h1>
 				<img src="assets/Points/Export.png" alt="">
 				<p>"Technology" "required" for the coating and treatment of optical surfaces to achieve an 'optical thickness' uniformity of 99.5% or better for optical coatings 500 mm or more in diameter or major axis length and with a total loss (absorption
@@ -92,7 +95,6 @@
 
 		<section>
 			<div class="content">
-				<h5 class="whats_new">New in 2.0</h5>
 				<h1>Multiple Exports</h1>
 				<img src="assets/Points/Export.png" alt="">
 				<p>a long curved fruit which grows in clusters and has soft pulpy flesh and yellow skin when ripe: a bunch of bananas.</p>
@@ -101,7 +103,6 @@
 
 		<section>
 			<div class="content">
-				<h5 class="whats_new">New in 2.0</h5>
 				<h1>Multiple Exports</h1>
 				<img src="assets/Points/Export.png" alt="">
 				<p>a long curved fruit which grows in clusters and has soft pulpy flesh and yellow skin when ripe: a bunch of bananas.</p>
@@ -109,7 +110,7 @@
 		</section>
 
 		<section>
-			<hr/>
+			<hr />
 		</section>
 
 		<section>
@@ -117,9 +118,9 @@
 				<h5>What else?</h5>
 				<h1>Multiple Windows</h1>
 				<h1>Fluent Design</h1>
-				<h1>Multiple Exports</h1>
-				<h1>Multiple Exports</h1>
-				<h1 style="margin: 0;">Multiple Exports</h1>
+				<h1>Drag and Drop</h1>
+				<h1>Null</h1>
+				<h1 style="margin: 0;">Built just for Windows 10</h1>
 			</div>
 		</section>
 
@@ -182,6 +183,7 @@
 	window.addEventListener('scroll', function(e) {
 		document.getElementById('header').setAttribute("style", "opacity: " + Math.min(window.scrollY / 100, 1) + ";");
 		document.getElementById('landing').setAttribute("style", "transform: translateZ(0) translateY(" + window.scrollY / 5 + "px);");
+		document.getElementById('landing_arrow').setAttribute("style", "opacity: " + Math.max(1 - window.scrollY / 100, 0) + ";");
 	});
 </script>
 
