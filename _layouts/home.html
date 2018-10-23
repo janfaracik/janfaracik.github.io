@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<div id="details_container">
+	<div class="jan" id="jan"></div>
+	<h1>Jan<br />Faracik</h1>
+	<h3>Currently</h3>
+	<h1>Software Engineer at Kainos</h1>
+	<h3>Projects</h3>
+	<ol>
+		{%- for path in site.pages -%}
+			<a class="page-link" href="{{ path.url | relative_url }}">{{ path.title | escape }}</a>
+		{%- endfor -%}
+	</ol>
+	<h3>Follow me on</h3>
+	<ol>
+		{%- if site.dribbble_username -%}<li><a href="https://dribbble.com/{{ site.dribbble_username| cgi_escape | escape }}">Dribbble</li>{%- endif -%}
+		{%- if site.facebook_username -%}<li><a href="https://www.facebook.com/{{ site.facebook_username| cgi_escape | escape }}">Facebook</li>{%- endif -%}
+		{%- if site.flickr_username -%}<li><a href="https://www.flickr.com/photos/{{ site.flickr_username| cgi_escape | escape }}">Flickr</a></li>{%- endif -%}
+		{%- if site.github_username -%}<li><a href="https://github.com/{{ site.github_username| cgi_escape | escape }}">GitHub</a></li>{%- endif -%}
+		{%- if site.instagram_username -%}<li><a href="https://instagram.com/{{ site.instagram_username| cgi_escape | escape }}">Instagram</a></li>{%- endif -%}
+		{%- if site.linkedin_username -%}<li><a href="https://linkedin.com/in/{{ site.linkedin_username| cgi_escape | escape }}">LinkedIn</a></li>{%- endif -%}
+		{%- if site.twitter_username -%}<li><a href="https://twitter.com/{{ site.twitter_username| cgi_escape | escape }}">Twitter</a></li>{%- endif -%}
+	</ol>
+</div>
+<div id="fadeout"></div>
+<script>
+	window.addEventListener('scroll', function(e) {
+		var newSize = Math.min(70, Math.max(30, 60 - (window.scrollY * 0.34)));
+		document.getElementById('jan').setAttribute("style", "width: " + newSize + "px; height: " + newSize + "px;");
+	});
+</script>

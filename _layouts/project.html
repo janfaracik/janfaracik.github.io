@@ -1,0 +1,58 @@
+---
+layout: default
+---
+
+<div id="landing">
+	{%- include {{ page.title | downcase }}.html -%}
+	<a id="landing_arrow" onclick="scrollToMain()">
+		<svg width="40px" height="15px" viewBox="0 0 40 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<g class="interaction">
+				<polygon points="4.00935808 1.42108547e-14 20 11.9929814 35.9906419 1.42108547e-14 40 1.42108547e-14 20 15 0 1.42108547e-14"></polygon>
+			</g>
+		</svg>
+	</a>
+</div>
+
+<main>
+	{%- include download.html -%}
+
+	{%- for section in page.sections -%}
+	<section>
+		<div class="content">
+			<h1>{{ section[0] }}</h1>
+			<img src="../assets/{{ page.title | downcase}}/{{ section[1] }}" alt="{{ section[0] }}">
+			<p>{{ section[2] }}</p>
+		</div>
+	</section>
+	{%- endfor -%}
+
+	<section>
+		<hr />
+	</section>
+
+	<section>
+		<div class="content">
+			<h5>What else?</h5>
+			{%- for feature in page.otherFeatures -%}
+			<h1>{{ feature }}</h1>
+			{%- endfor -%}
+		</div>
+	</section>
+
+	{%- include download.html -%}
+</main>
+
+<script>
+	function scrollToMain() {
+		window.scroll({
+			top: window.innerHeight,
+			left: 0,
+			behavior: 'smooth'
+		});
+	}
+	window.addEventListener('scroll', function(e) {
+		document.getElementById('header').setAttribute("style", "opacity: " + Math.min(window.scrollY / 100, 1) + ";");
+		document.getElementById('landing').setAttribute("style", "transform: translateZ(0) translateY(" + window.scrollY / 5 + "px);");
+		document.getElementById('landing_arrow').setAttribute("style", "opacity: " + Math.max(1 - window.scrollY / 100, 0) + ";");
+	});
+</script>

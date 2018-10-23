@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+{%- include head.html -%}
+
+<body>
+
+	{%- include header.html -%}
+
+	<script>
+		if (localStorage.getItem("darkMode") == "true") {
+			var metaThemeColor = document.querySelector("meta[name=theme-color]");
+			metaThemeColor.setAttribute("content", "#141414");
+			document.body.classList.toggle("dark", true);
+		}
+	</script>
+	
+	{{ content }}
+
+	{%- include footer.html -%}
+
+</body>
+
+</html>

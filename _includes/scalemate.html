@@ -1,0 +1,13 @@
+<div id="landing_images">
+	{%- for i in (1..9) -%}
+		<div class="landing_box" {%- cycle '', 'style="animation-delay: 0.6s;"' -%}>
+			{%- if i == 5 -%}
+				<div id="landing_title">
+
+				</div>
+			{%- endif -%}
+			<div class="image_box" style="background-image: url(../assets/scalemate/images/{{ i }}.jpg);"></div>
+		</div>
+	{%- endfor -%}
+</div>
+</div>
