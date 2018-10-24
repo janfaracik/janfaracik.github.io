@@ -24,6 +24,22 @@
 	--foreground-color: 240, 240, 240;
 }
 
+@media (prefers-color-scheme: light) {
+	#toggle_theme_button {
+		display: none;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	#toggle_theme_button {
+		display: none;
+	}
+	:root {
+		--background-color: 30, 30, 30;
+		--foreground-color: 240, 240, 240;
+	}
+}
+
 body,
 html {
 	background-color: rgb(var(--background-color));
