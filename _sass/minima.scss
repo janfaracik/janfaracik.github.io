@@ -1,10 +1,18 @@
 @charset "utf-8";
 
-// Define defaults for each variable.
+%absolute-pseudo {
+	position: absolute;
+	content: "";
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
 
 @import
   "minima/base",
   "minima/buttons",
+  "minima/footer",
   "minima/scalemate",
   "minima/paleta"
 ;

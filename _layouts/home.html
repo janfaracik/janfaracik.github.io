@@ -3,7 +3,9 @@ layout: default
 ---
 
 <div id="details_container">
-	<div class="jan" id="jan"></div>
+	<div class="button" id="jan" style="padding: 0;">
+		<img src="/assets/jan.png" alt="Tap to go home">
+	</div>
 	<h1>Jan<br />Faracik</h1>
 	<h3>Currently</h3>
 	<h1>Software Engineer at Kainos</h1>
@@ -28,6 +30,6 @@ layout: default
 <script>
 	window.addEventListener('scroll', function(e) {
 		var newSize = Math.min(70, Math.max(30, 60 - (window.scrollY * 0.34)));
-		document.getElementById('jan').setAttribute("style", "width: " + newSize + "px; height: " + newSize + "px;");
+		document.getElementById('jan').setAttribute("style", "padding: 0; width: " + newSize + "px; height: " + newSize + "px;");
 	});
 </script>

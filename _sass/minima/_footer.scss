@@ -1,0 +1,37 @@
+footer {
+	padding: var(--padding);
+	max-width: var(--max-width);
+	width: 100%;
+	margin: auto;
+	display: grid;
+	grid-template-columns: 1fr auto;
+	user-select: none;
+}
+
+footer .button {
+	display: inline-flex;
+	width: 32px;
+	height: 32px;
+	padding: 0;
+}
+
+footer a {
+	color: var(--foreground-color);
+	text-decoration: none;
+}
+
+footer p {
+	font-size: 15px;
+	font-weight: 600;
+	line-height: 32px;
+	opacity: .5;
+}
+
+.bulb path {
+	fill: rgb(var(--foreground-color));
+	opacity: .5;
+}
+
+.bulb_active {
+	filter: drop-shadow(0 0 5px yellow);
+}

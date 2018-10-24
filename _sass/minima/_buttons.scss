@@ -1,24 +1,38 @@
 .button {
 	position: relative;
-	display: inline-block;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	padding: 0 var(--padding);
-	background-color: rgba(var(--foreground-color), 0.075);
 	color: rgb(var(--foreground-color));
 	line-height: 46px;
-	border-radius: 23px;
+	border-radius: 200px;
 	font-size: 15px;
 	font-weight: 600;
 	text-decoration: none;
-}
+	z-index: 0;
 
-.button::after {
-	position: absolute;
-	content: "";
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	border: 1px solid rgb(var(--foreground-color));
-	border-radius: inherit;
-	opacity: .05;
+	&:before {
+		@extend %absolute-pseudo;
+		background-color: rgb(var(--foreground-color));
+		opacity: 0.075;
+		border-radius: inherit;
+		z-index: -1;
+	}
+
+	&:after {
+		@extend %absolute-pseudo;
+		border: 1px solid rgb(var(--foreground-color));
+		border-radius: inherit;
+		opacity: 0.05;
+	}
+
+	& > * {
+		z-index: 1;
+	}
+
+	& > img {
+		height: 100%;
+	}
+
 }

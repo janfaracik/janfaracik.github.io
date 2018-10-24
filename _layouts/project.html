@@ -5,11 +5,7 @@ layout: default
 <div id="landing">
 	{%- include {{ page.title | downcase }}.html -%}
 	<a id="landing_arrow" onclick="scrollToMain()">
-		<svg width="40px" height="15px" viewBox="0 0 40 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-			<g class="interaction">
-				<polygon points="4.00935808 1.42108547e-14 20 11.9929814 35.9906419 1.42108547e-14 40 1.42108547e-14 20 15 0 1.42108547e-14"></polygon>
-			</g>
-		</svg>
+		{%- include assets/arrow_down.svg -%}
 	</a>
 </div>
 
@@ -19,6 +15,9 @@ layout: default
 	{%- for section in page.sections -%}
 	<section>
 		<div class="content">
+			{%- if forloop.index == 1 -%}
+				<h5 class="whats_new">What's new?</h5>
+			{%- endif -%}
 			<h1>{{ section[0] }}</h1>
 			<img src="../assets/{{ page.title | downcase}}/{{ section[1] }}" alt="{{ section[0] }}">
 			<p>{{ section[2] }}</p>
