@@ -23,17 +23,16 @@
 	--background-color: 30, 30, 30;
 	--foreground-color: 240, 240, 240;
 }
-
 @media (prefers-color-scheme: light) {
 	#toggle_theme_button {
 		display: none;
 	}
 }
-
 @media (prefers-color-scheme: dark) {
 	#toggle_theme_button {
 		display: none;
 	}
+
 	:root {
 		--background-color: 30, 30, 30;
 		--foreground-color: 240, 240, 240;
@@ -125,7 +124,6 @@ h3 {
 		--small-size: 4vw;
 	}
 }
-
 /* Pages */
 #landing {
 	position: relative;
@@ -244,6 +242,14 @@ section img {
 	transform: scaleX(1.1);
 	margin-top: 20px;
 	margin-bottom: calc(var(--padding) + 20px);
+	transition: transform 0.2s ease, margin 0.2s ease;
+}
+@media (max-width: 1000px) {
+	section img {
+		transform: scale(1);
+		margin-top: 10px;
+		margin-bottom: calc(var(--padding) + 10px);
+	}
 }
 
 section h1 {
@@ -311,6 +317,12 @@ section hr {
 	background-color: rgba(50, 50, 50, 0.9) !important;
 }
 
+@media (prefers-color-scheme: dark) {
+	.download_section {
+		background-color: rgba(50, 50, 50, 0.9) !important;
+	}
+}
+
 .download_section_inner {
 	max-width: var(--max-width);
 	margin: auto;
@@ -318,6 +330,16 @@ section hr {
 	display: grid;
 	grid-template-columns: 1fr auto;
 	grid-gap: var(--padding);
+}
+@media (max-width: 374px) {
+	.download_section_inner {
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr auto;
+		text-align: center;
+	}
+	.download_section_inner .button {
+		width: 100%;
+	}
 }
 
 .vertical_centre {

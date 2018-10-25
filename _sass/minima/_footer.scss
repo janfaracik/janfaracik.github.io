@@ -27,6 +27,12 @@ footer p {
 	opacity: .5;
 }
 
+@media (max-width: 375px) {
+	footer p {
+		max-width: 160px;
+	}
+}
+
 .bulb path {
 	fill: rgb(var(--foreground-color));
 	opacity: .5;
