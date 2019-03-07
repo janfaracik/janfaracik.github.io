@@ -40,7 +40,7 @@ p {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: radial-gradient(rgb(var(--background-color)), rgba(var(--background-color), 0) 60%);
+	background: radial-gradient(var(--background-color), rgba(var(--background-color), 0) 60%);
 	opacity: 0;
 }
 
