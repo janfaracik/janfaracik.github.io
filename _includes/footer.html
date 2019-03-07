@@ -4,11 +4,6 @@
 			Built in London. <wbr>Powered by <a class="interaction" href="https://www.github.com/janfaracik/janfaracik.github.io">GitHub</a>.</wbr>
 		</p>
 	</div>
-	<div class="vertical_centre">
-		<a id="toggle_theme_button" class="button interaction" onclick="toggleTheme()">
-			{%- include assets/lightbulb.svg -%}
-		</a>
-	</div>
 </footer>
 <script>
 	function scrollToTop() {
@@ -19,15 +14,6 @@
 		});
 	}
 
-	function toggleTheme() {
-		localStorage.setItem("darkMode", document.body.classList.toggle("dark"));
-		var metaThemeColor = document.querySelector("meta[name=theme-color]");
-		if (localStorage.getItem("darkMode") == "true") {
-			metaThemeColor.setAttribute("content", "#141414");
-		} else {
-			metaThemeColor.setAttribute("content", "#FEFEFE");
-		}
-	}
 	window.addEventListener('scroll', function(e) {
 		document.getElementById('header').setAttribute("style", "opacity: " + Math.min(window.scrollY / 100, 1) + ";");
 	});

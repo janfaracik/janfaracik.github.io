@@ -1,3 +1,6 @@
+---
+---
+
 @charset "utf-8";
 
 %absolute-pseudo {
@@ -10,9 +13,9 @@
 }
 
 @import
-  "minima/base",
-  "minima/buttons",
-  "minima/footer",
-  "minima/scalemate",
-  "minima/paleta"
+  "base",
+  "buttons",
+  "footer",
+  "scalemate",
+  "paleta"
 ;
