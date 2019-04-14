@@ -5,6 +5,9 @@ twitter_username: janfaracik
 github_username: janfaracik
 linkedin_username: janfaracik
 
+plugins:
+    - jekyll-feed
+
 markdown: kramdown
 
 sass:
