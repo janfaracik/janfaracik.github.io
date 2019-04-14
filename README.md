@@ -2,11 +2,8 @@
 Personal site.
 
 ## Features
-* ?
-* ?
-* ?
-* ?
-* Support for automatic dark mode (Safari Tech Preview 68 >)
+* Support for automatic dark mode
+* OLED theme on iPhones X and above
 
 ## Running locally
 * `bundle exec jekyll serve`
