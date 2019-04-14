@@ -11,8 +11,10 @@ layout: default
 	<h1>Software Engineer at Kainos</h1>
 	<h3>Projects</h3>
 	<ol>
-		{%- for path in site.pages -%}
-			<a class="page-link" href="{{ path.url | relative_url }}">{{ path.title | escape }}</a>
+		{%- for page in site.pages -%}
+			{%- if page.hidden != true -%}
+				<a class="page-link" href="{{ page.url | relative_url }}">{{ page.title | escape }}</a>
+			{%- endif -%}
 		{%- endfor -%}
 	</ol>
 	<h3>Follow me on</h3>
