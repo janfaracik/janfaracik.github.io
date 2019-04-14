@@ -48,15 +48,14 @@ a[href^="https://github"] {
 	max-width: var(--max-width);
 	margin: auto;
 	padding: 120px var(--padding);
-}
-
-#details_container * {
-	margin-bottom: 15px;
-	font-weight: 800;
-	display: block;
-	font-size: var(--large-size);
-	text-decoration: none;
-	transition: font-size 0.2s ease, padding 0.2s ease;
+	* {
+		margin-bottom: 15px;
+		font-weight: 800;
+		display: block;
+		font-size: var(--large-size);
+		text-decoration: none;
+		transition: font-size 0.2s ease, padding 0.2s ease;
+	}
 }
 
 #details_container a:hover {
