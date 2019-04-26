@@ -17,26 +17,8 @@ html {
 	-webkit-overflow-scrolling: touch;
 	-webkit-appearance: none;
 }
-/* Social Media */
-a[href$="paleta/"] {
-	color: rgb(var(--paleta-color));
-}
 
-a[href$="scalemate/"] {
-	color: rgb(var(--scalemate-color));
-}
 
-a[href^="https://twitter"] {
-	color: rgb(var(--twitter-color));
-}
-
-a[href^="https://linkedin"] {
-	color: rgb(var(--linkedin-color));
-}
-
-a[href^="https://github"] {
-	color: rgb(var(--github-color));
-}
 /* Details */
 .content {
 	max-width: var(--max-width);
@@ -44,41 +26,6 @@ a[href^="https://github"] {
 	padding: 0 var(--padding);
 }
 
-#details_container {
-	max-width: var(--max-width);
-	margin: auto;
-	padding: 120px var(--padding);
-	* {
-		margin-bottom: 15px;
-		font-weight: 800;
-		display: block;
-		font-size: var(--large-size);
-		text-decoration: none;
-		transition: font-size 0.2s ease, padding 0.2s ease;
-	}
-}
-
-#details_container a:hover {
-	padding-left: 30px;
-}
-
-h3 {
-	font-weight: 800 !important;
-	font-size: var(--medium-size) !important;
-	margin-top: 90px;
-	opacity: .5;
-}
-
-#fadeout {
-	position: fixed;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	height: 120px;
-	background: linear-gradient(rgba(var(--background-color), 0), rgb(var(--background-color)));
-	opacity: 0.4;
-	pointer-events: none;
-}
 @media screen and (max-width: 750px) {
 	:root {
 		--large-size: 12vw;

@@ -24,7 +24,7 @@
 @media (prefers-color-scheme: dark) {
 	:root {
 		--background-color: 17, 20, 27;
-		--foreground-color: 240, 245, 250;
+		--foreground-color: 245, 250, 255;
 		// iPhone X Styling
 		@media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3), only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 3) {
 			--background-color: 0, 0, 0;
@@ -41,4 +41,4 @@
 	right: 0;
 	bottom: 0;
 }
-@import "base", "buttons", "footer", "scalemate", "paleta";
+@import "base", "home", "buttons", "footer", "scalemate", "paleta";
