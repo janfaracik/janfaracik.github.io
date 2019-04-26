@@ -21,7 +21,7 @@ layout: default
 	<!-- Projects -->
 	<h3>Projects</h3>
 	{%- for page in site.pages -%}
-		{%- if page.hidden != null && page.hidden != true -%}
+		{%- if page.hidden != null and page.hidden != true -%}
 			<a class="page-link" href="{{ page.url | relative_url }}">{{ page.title | escape }}</a>
 		{%- endif -%}
 	{%- endfor -%}
@@ -44,10 +44,9 @@ layout: default
 
 <script>
 	window.addEventListener('scroll', function(e) {
-
  		var homeListSeparators = document.getElementsByClassName("home-list-separator");
 		Array.from(homeListSeparators).forEach((el) => {
-			el.style.height = (Math.max(80, 80 - (window.scrollY * 0.75))) + 'px';
+			el.style.height = (Math.max(80, 80 - (window.scrollY * 0.6))) + 'px';
 		});
 
 		var newSize = Math.min(60, Math.max(30, 60 - (window.scrollY * 0.34)));
