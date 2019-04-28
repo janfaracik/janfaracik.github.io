@@ -6,10 +6,10 @@
 	@for $i from 0 through 100 {
 		& > *:nth-child(#{$i}) {
 			animation-name: bounce-up;
-			animation-duration: 0.45s;
-			animation-timing-function: cubic-bezier(0.000, 0.375, 0.085, 1.525);
+			animation-duration: 0.475s;
+			animation-timing-function: cubic-bezier(0.000, 0.375, 0.085, 1.4);
 			animation-fill-mode: both;
-			animation-delay: $i * 0.1s;
+			animation-delay: $i * 0.075s;
 		}
 	}
 
@@ -62,11 +62,13 @@
 	0% {
 		opacity: 0;
 		transform: translateY(175px);
+		filter: blur(30px);
 	}
 
 	100% {
 		opacity: 1;
 		transform: translateY(0px);
+		filter: blur(0px);
 	}
 }
 
