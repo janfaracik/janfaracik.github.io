@@ -12,3 +12,9 @@ markdown: kramdown
 
 sass:
   style: compact
+
+collections:
+  posts:
+    output: true
+  projects:
+    output: true

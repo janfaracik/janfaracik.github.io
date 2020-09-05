@@ -1,57 +1,8 @@
 ---
-layout: default
+layout: base
 ---
 
-<div id="landing">
-	{%- include {{ page.title | downcase }}.html -%}
-	<a id="landing_arrow" onclick="scrollToMain()">
-		{%- include assets/arrow_down.svg -%}
-	</a>
+<div class="">
+	I am a project
+	{{ content }}
 </div>
-
-<main>
-	{%- include download.html -%}
-
-	{%- for section in page.sections -%}
-	<section>
-		<div class="content">
-			{%- if forloop.index == 1 -%}
-				<h5 class="whats_new">What's new?</h5>
-			{%- endif -%}
-			<h1>{{ section[0] }}</h1>
-			<img src="../assets/{{ page.title | downcase}}/{{ section[1] }}" alt="{{ section[0] }}">
-			<p>{{ section[2] }}</p>
-		</div>
-	</section>
-	{%- endfor -%}
-
-	<section>
-		<hr />
-	</section>
-
-	<section>
-		<div class="content">
-			<h5>What else?</h5>
-			{%- for feature in page.otherFeatures -%}
-			<h1>{{ feature }}</h1>
-			{%- endfor -%}
-		</div>
-	</section>
-
-	{%- include download.html -%}
-</main>
-
-<script>
-	function scrollToMain() {
-		window.scroll({
-			top: window.innerHeight,
-			left: 0,
-			behavior: 'smooth'
-		});
-	}
-	window.addEventListener('scroll', function(e) {
-		document.getElementById('header').setAttribute("style", "opacity: " + Math.min(window.scrollY / 100, 1) + ";");
-		document.getElementById('landing').setAttribute("style", "transform: translateZ(0) translateY(" + window.scrollY / 5 + "px);");
-		document.getElementById('landing_arrow').setAttribute("style", "opacity: " + Math.max(1 - window.scrollY / 100, 0) + ";");
-	});
-</script>

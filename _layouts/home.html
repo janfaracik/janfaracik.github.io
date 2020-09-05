@@ -1,55 +1,31 @@
 ---
-layout: default
+layout: base
 ---
 
-<div id="home-list-container">
+Hello world
 
-	<!-- Header -->
-	<div class="button" id="jan" style="padding: 0;">
-		<img src="/assets/jan.svg" alt="Tap to go home">
-	</div>
-	<h1>Jan<br />Faracik</h1>
+<div>
+	Posts
+	<ul>
+		{% for post in site.posts %}
+			<li>
+				<a href="{{ post.url }}">
+					{{ post.title }}
+				</a>
+			</li>
+		{% endfor %}
+	</ul>
 
-	<div class="home-list-separator"></div>
+	<br><br>
 
-	<!-- Currently working on -->
-	<h3>Currently</h3>
-	<h1>Software Engineer at Kainos</h1>
-
-	<div class="home-list-separator"></div>
-
-	<!-- Projects -->
-	<h3>Projects</h3>
-	{%- for page in site.pages -%}
-		{%- if page.hidden != null and page.hidden != true -%}
-			<a class="page-link" href="{{ page.url | relative_url }}">{{ page.title | escape }}</a>
-		{%- endif -%}
-	{%- endfor -%}
-
-	<div class="home-list-separator"></div>
-
-	<!-- Social -->
-	<h3>Follow me on</h3>
-	{%- if site.dribbble_username -%}<a class="page-link" href="https://dribbble.com/{{ site.dribbble_username| cgi_escape | escape }}">Dribbble</a>{%- endif -%}
-	{%- if site.facebook_username -%}<a class="page-link" href="https://www.facebook.com/{{ site.facebook_username| cgi_escape | escape }}">Facebook</a>{%- endif -%}
-	{%- if site.flickr_username -%}<a class="page-link" href="https://www.flickr.com/photos/{{ site.flickr_username| cgi_escape | escape }}">Flickr</a>{%- endif -%}
-	{%- if site.github_username -%}<a class="page-link" href="https://github.com/{{ site.github_username| cgi_escape | escape }}">GitHub</a>{%- endif -%}
-	{%- if site.instagram_username -%}<a class="page-link" href="https://instagram.com/{{ site.instagram_username| cgi_escape | escape }}">Instagram</a>{%- endif -%}
-	{%- if site.linkedin_username -%}<a class="page-link" href="https://linkedin.com/in/{{ site.linkedin_username| cgi_escape | escape }}">LinkedIn</a>{%- endif -%}
-	{%- if site.twitter_username -%}<a class="page-link" href="https://twitter.com/{{ site.twitter_username| cgi_escape | escape }}">Twitter</a>{%- endif -%}
-
+	Projects
+	<ul>
+		{%- for page in site.projects -%}
+			<li>
+				<a class="page-link" href="{{ page.url }}">
+					{{ page.name }}
+				</a>
+			</li>
+		{%- endfor -%}
+	</ul>
 </div>
-
-<div id="fade-out"></div>
-
-<script>
-	window.addEventListener('scroll', function(e) {
- 		var homeListSeparators = document.getElementsByClassName("home-list-separator");
-		Array.from(homeListSeparators).forEach((el) => {
-			el.style.height = (Math.max(80, 80 - (window.scrollY * 0.6))) + 'px';
-		});
-
-		var newSize = Math.min(60, Math.max(30, 60 - (window.scrollY * 0.34)));
-		document.getElementById('jan').setAttribute("style", "padding: 0; width: " + newSize + "px; height: " + newSize + "px;");
-	});
-</script>

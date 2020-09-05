@@ -1,5 +1,5 @@
 # janfaracik.github.io
-Personal site.
+Personal website
 
 ## Running locally
 * `bundle exec jekyll serve`

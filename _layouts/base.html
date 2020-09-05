@@ -1,0 +1,53 @@
+<!--
+  ___                      _   __  __
+ |_ _|                    /_\ |  \/  |
+  | |                    / _ \| |\/| |
+ |___|_   _   _____   __/_/ \_\_|  |_|
+   | __| /_\ / __\ \ / /
+   | _| / _ \\__ \\ V /
+   |___/_/ \_\___/_|_|_
+             |_   _/ _ \
+               | || (_) |
+               |_| \___/___ _  _ ___
+                   | __|_ _| \| |   \
+                   | _| | || .` | |) |
+                   |_| |___|_|\_|___/
+-->
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+		{%- feed_meta -%}
+		<title>{{ page.title }}{% if page.title %} - {% endif %}Jan Faracik</title>
+		<link rel="icon" type="image/png" href="/assets/jan.png" sizes="128x128">
+		<meta name="theme-color" content="#FEFEFE" />
+		<meta name="author" content="{{ site.author }}" />
+		<meta name="description" content="{{ site.description }}" />
+	</head>
+
+	<body class="app-body" ontouchstart>
+		<!-- <header id="app-header">
+			<a href="../" class="button interaction">
+				<img src="/assets/jan.svg" alt="Tap to go home">
+			</a>
+			<a class="button interaction" onclick="scrollToTop()">
+				{%- include assets/arrow_up.svg -%}
+			</a>
+		</header> -->
+
+		<div class="app-content">
+			{{ content }}
+		</div>
+
+		<!-- <footer class="app-footer">
+			<div class="vertical_centre">
+				<p>
+					Built in London. <wbr>Powered by <a class="interaction" href="https://www.github.com/janfaracik/janfaracik.github.io">GitHub</a>.</wbr>
+				</p>
+			</div>
+		</footer> -->
+	</body>
+</html>
