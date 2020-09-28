@@ -1,0 +1,69 @@
+.app-project {
+	&__landing {
+		position: relative;
+		height: 90vh;
+		margin-bottom: app-spacing(10);
+		margin-top: -93px;
+
+		&::before {
+			@extend %absolute-full-width-pseudo;
+			background-image: url(https://jasonyuan.design/static/media/wormhole.7818989c.jpg);
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+	}
+
+	&__masthead {
+		margin-bottom: app-spacing(10);
+
+		svg {
+			margin-bottom: app-spacing(5);
+
+			* {
+				fill: currentColor;
+			}
+		}
+
+		&-title {
+			font-size: calc(var(--small-size) * 1.5);
+			margin-bottom: app-spacing(5);
+		}
+
+		&-details {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			font-weight: bold;
+			text-transform: uppercase;
+			font-size: 11px;
+			letter-spacing: 1px;
+		}
+	}
+
+	&__content {
+		p {
+			font-size: var(--small-size);
+			font-weight: bold;
+			line-height: 1.6;
+			margin-bottom: app-spacing(6);
+		}
+
+		img {
+			display: block;
+			width: calc(100% + 40px);
+			margin: 0 -20px;
+			margin-bottom: app-spacing(6);
+			box-shadow: 0 5px 5px rgba(black, 0.1), 0 5px 30px rgba(black, 0.1);
+			cursor: pointer;
+			transition: .2s ease;
+
+			&:hover {
+				transform: scale(1.01);
+				filter: brightness(1.05);
+				box-shadow: 0 10px 30px rgba(black, 0.3), 0 10px 50px rgba(black, 0.3);
+				z-index: 1;
+			}
+		}
+	}
+}

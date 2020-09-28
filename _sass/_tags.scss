@@ -1,0 +1,19 @@
+.app-tags {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	list-style-type: none;
+
+	li {
+		font-size: 11px;
+		letter-spacing: 1px;
+		border-radius: app-spacing(1);
+		background-color: RGBA(var(--foreground-color), 0.1);
+		margin-right: app-spacing(2);
+		padding: app-spacing(1) app-spacing(2);
+		font-weight: bold;
+		text-transform: uppercase;
+		border: 1px solid RGBA(var(--foreground-color), 0.05);
+	}
+}

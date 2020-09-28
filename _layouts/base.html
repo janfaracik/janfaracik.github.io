@@ -27,27 +27,32 @@
 		<meta name="author" content="{{ site.author }}" />
 		<meta name="description" content="{{ site.description }}" />
 	</head>
-
+	{%- if page.background -%}
+		<style media="screen">
+			:root {
+				--background-color: {{ page.background }};
+				--foreground-color: {{ page.foreground }};
+				--accent-color: {{ page.foreground }};
+			}
+		</style>
+	{%- endif -%}
 	<body class="app-body" ontouchstart>
-		<!-- <header id="app-header">
-			<a href="../" class="button interaction">
-				<img src="/assets/jan.svg" alt="Tap to go home">
+		<header class="app-header">
+			<a class="app-header__logo" href="/"></a>
+			<a href="#">
+				Projects
 			</a>
-			<a class="button interaction" onclick="scrollToTop()">
+			<a onclick="scrollToTop()">
 				{%- include assets/arrow_up.svg -%}
 			</a>
-		</header> -->
+		</header>
 
 		<div class="app-content">
 			{{ content }}
 		</div>
 
-		<!-- <footer class="app-footer">
-			<div class="vertical_centre">
-				<p>
-					Built in London. <wbr>Powered by <a class="interaction" href="https://www.github.com/janfaracik/janfaracik.github.io">GitHub</a>.</wbr>
-				</p>
-			</div>
-		</footer> -->
+		<footer class="app-footer">
+			Built in London. <wbr>Powered by <a class="interaction" href="https://www.github.com/janfaracik/janfaracik.github.io">GitHub</a>.
+		</footer>
 	</body>
 </html>

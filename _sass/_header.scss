@@ -1,0 +1,34 @@
+.app-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: app-spacing(5) 0;
+	z-index: 1;
+
+	&__logo {
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		overflow: hidden;
+		background: RGBA(var(--foreground-color), 0.2);
+		background-image: url(/assets/jan.svg);
+		background-position: center;
+		background-size: cover;
+		border-radius: 100%;
+	}
+
+	&::before {
+		@extend %absolute-full-width-pseudo;
+		z-index: -1;
+
+		@supports (-webkit-backdrop-filter: blur(15px)) {
+			-webkit-backdrop-filter: blur(15px);
+			background: RGBA(var(--background-color), 0.6);
+		}
+
+		@supports not (-webkit-backdrop-filter: blur(15px)) {
+			background: RGBA(var(--background-color), 0.95);
+		}
+	}
+}

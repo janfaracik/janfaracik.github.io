@@ -1,31 +1,67 @@
 ---
 layout: base
 ---
+<div class="app-home">
+	<section class="app-home__section">
+		<h1 class="app-home__item">Jan<br>Faracik</h1>
+	</section>
 
-Hello world
+	<section class="app-home__section">
+		<h2 class="app-home__header">Currently</h2>
+		<p class="app-home__item">Software Engineer at Kainos</p>
+	</section>
 
-<div>
-	Posts
-	<ul>
-		{% for post in site.posts %}
-			<li>
-				<a href="{{ post.url }}">
-					{{ post.title }}
-				</a>
+	<!-- <section class="app-home__section">
+		<h2 class="app-home__header">Posts</h2>
+		<ul class="app-home__list">
+			{% for post in site.posts %}
+				<li class="app-home__item">
+					<a href="{{ post.url }}">
+						{{ post.title }}
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</section> -->
+
+	<section class="app-home__section">
+		<h2 class="app-home__header">Projects</h2>
+		<ul class="app-home__cards">
+			{%- for page in site.projects -%}
+				<li class="app-home__card" style="background-color: rgb({{ page.background }}); color: rgb({{ page.foreground }})">
+					<a href="{{ page.url }}">
+						{{ page.name }}
+					</a>
+				</li>
+			{%- endfor -%}
+		</ul>
+	</section>
+
+	<section class="app-home__section">
+		<h2 class="app-home__header">Projects</h2>
+		<ul class="app-home__list">
+			{%- for page in site.projects -%}
+				<li class="app-home__item">
+					<a href="{{ page.url }}">
+						{{ page.name }}
+					</a>
+				</li>
+			{%- endfor -%}
+		</ul>
+	</section>
+	
+	<section class="app-home__section">
+		<h2 class="app-home__header">Follow me on</h2>
+		<ul class="app-home__list">
+			<li class="app-home__item">
+				<a class="page-link" href="https://github.com/janfaracik">GitHub</a>
 			</li>
-		{% endfor %}
-	</ul>
-
-	<br><br>
-
-	Projects
-	<ul>
-		{%- for page in site.projects -%}
-			<li>
-				<a class="page-link" href="{{ page.url }}">
-					{{ page.name }}
-				</a>
+			<li class="app-home__item">
+				<a class="page-link" href="https://linkedin.com/in/janfaracik">LinkedIn</a>
 			</li>
-		{%- endfor -%}
-	</ul>
+			<li class="app-home__item">
+				<a class="page-link" href="https://twitter.com/janfaracik">Twitter</a>
+			</li>
+		</ul>
+	</section>
 </div>

@@ -1,63 +1,67 @@
-#home-list-container {
-	max-width: var(--max-width);
-	margin: auto;
-	padding: 120px var(--padding);
+.app-home {
+	&__header {
+		font-size: var(--medium-size);
+		margin-bottom: app-spacing(6);
+		opacity: 0.5;
+		font-weight: 800;
+	}
 
-	@for $i from 0 through 100 {
-		& > *:nth-child(#{$i}) {
-			animation-name: bounce-up;
-			animation-duration: 0.475s;
-			animation-timing-function: cubic-bezier(0.000, 0.375, 0.085, 1.4);
-			animation-fill-mode: both;
-			animation-delay: $i * 0.075s;
+	&__section {
+		margin-bottom: app-spacing(25);
+	}
+
+	&__cards {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 30px;
+		list-style-type: none;
+	}
+
+	&__card {
+		padding: 0;
+		margin: 0;
+		background: red;
+		padding: app-spacing(6);
+		font-size: var(--small-size);
+		margin-bottom: app-spacing(10);
+		font-weight: 800;
+
+		a {
+			text-decoration: none;
+			color: currentColor;
+			transition: 0.2s ease;
+
+			&:hover {
+				text-shadow: 10px 10px 0 red;
+			}
 		}
 	}
 
-	h1,
-	h3,
-	.page-link {
-		font-weight: 800;
+	&__list {
 		display: block;
+		list-style-type: none;
+	}
+
+	&__item {
 		font-size: var(--large-size);
-		text-decoration: none;
-		transition: 0.2s ease;
-		margin-bottom: var(--padding);
-	}
+		margin-bottom: app-spacing(10);
+		font-weight: 800;
 
-	h3 {
-		font-size: var(--medium-size) !important;
-		color: rgba(var(--foreground-color), 0.5);
-	}
+		a {
+			text-decoration: none;
+			color: black;
+			transition: 0.2s ease;
 
-	a:hover {
-		padding-left: 20px;
-	}
+			&:hover {
+				text-shadow: 10px 10px 0 red;
+			}
+		}
 
-	a[href$="paleta/"] {
-		color: rgb(var(--paleta-color));
-	}
-
-	a[href$="scalemate/"] {
-		color: rgb(var(--scalemate-color));
-	}
-
-	a[href^="https://twitter"] {
-		color: rgb(var(--twitter-color));
-	}
-
-	a[href^="https://linkedin"] {
-		color: rgb(var(--linkedin-color));
-	}
-
-	a[href^="https://github"] {
-		color: rgb(var(--github-color));
-	}
-
-	.home-list-separator {
-		height: 80px;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
 	}
 }
-
 @keyframes bounce-up {
 	0% {
 		opacity: 0;
@@ -70,15 +74,4 @@
 		transform: translateY(0px);
 		filter: blur(0px);
 	}
-}
-
-#fade-out {
-	position: fixed;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	height: 120px;
-	background: linear-gradient(rgba(var(--background-color), 0), rgb(var(--background-color)));
-	opacity: 0.6;
-	pointer-events: none;
 }

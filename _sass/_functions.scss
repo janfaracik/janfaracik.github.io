@@ -1,0 +1,22 @@
+@function app-spacing($multiplier) {
+	@return $multiplier * 5 + px;
+}
+
+%absolute-pseudo {
+	position: absolute;
+	content: "";
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+%absolute-full-width-pseudo {
+	position: absolute;
+	content: "";
+	top: 0;
+	left: 50%;
+	bottom: 0;
+	width: 100vw;
+	transform: translateX(-50%);
+}

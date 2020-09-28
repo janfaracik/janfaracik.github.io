@@ -1,8 +1,27 @@
 ---
 layout: base
 ---
+<div class="app-project">
+	<div class="app-project__landing">
+		
+	</div>
 
-<div class="">
-	I am a project
-	{{ content }}
+	<div class="app-project__masthead">
+		<h1 class="app-project__masthead-title">{{ page.name }}</h1>
+
+		<div class="app-project__masthead-details">
+			<ol class="app-tags">
+				{%- for technology in page.technologies -%}
+					<li>
+						{{ technology }}
+					</li>
+				{%- endfor -%}
+			</ol>
+			<p>{{ page.startDate }} to {{ page.endDate }}</p>
+		</div>
+	</div>
+
+	<div class="app-project__content">
+		{{ content }}
+	</div>
 </div>
