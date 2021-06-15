@@ -6,7 +6,8 @@
 	{%- feed_meta -%}
 	<title>{{ page.title }}{% if page.title %} - {% endif %}Jan Faracik</title>
 	<link rel="icon" type="image/png" href="/assets/jan.png" sizes="128x128">
-	<meta name="theme-color" content="#FEFEFE" />
+	<meta name="theme-color" content="#FEFEFE" media="(prefers-color-scheme: light)">
+	<meta name="theme-color" content="#11141b" media="(prefers-color-scheme: dark)">
 	<meta name="author" content="{{ site.author }}" />
 	<meta name="description" content="{{ site.description }}" />
 </head>
