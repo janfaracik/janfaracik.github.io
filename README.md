@@ -1,1 +1,0 @@
-# janfaracik.github.io
