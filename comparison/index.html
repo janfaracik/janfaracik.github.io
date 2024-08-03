@@ -177,10 +177,10 @@
                 window.removeEventListener('mouseup', endMove);
             };
 
-            target.addEventListener('mousedown', function (event) {
+            target.addEventListener('pointerdown', function (event) {
                 event.stopPropagation(); // remove if you do want it to propagate ..
-                window.addEventListener('mousemove', whileMove);
-                window.addEventListener('mouseup', endMove);
+                window.addEventListener('pointermove', whileMove);
+                window.addEventListener('pointerup', endMove);
             });
         }
 
