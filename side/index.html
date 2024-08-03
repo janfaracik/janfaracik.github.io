@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Side</title>
+</head>
+<body style="--position: 50%">
+    <style>
+        #before, #after {
+            position: absolute;
+            inset: 0;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-color: white;
+        }
+        #before {
+            mask-image: linear-gradient(90deg, #000000 var(--position), transparent var(--position));
+        }
+        #after {
+            mask-image: linear-gradient(90deg, transparent var(--position), #000000 var(--position));
+        }
+        #grabber {
+            position: absolute;
+            top: 0;
+            left: calc(var(--position) - 25px);
+            bottom: 0;
+            width: 50px;
+            border-radius: 100px;
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            mask-image: linear-gradient(90deg, transparent, #000000, transparent);
+            background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M38 15L48 25L38 35' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M12 15L2 25L12 35' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+            background-position: center;
+            background-repeat: no-repeat;
+            cursor: col-resize;
+        }
+    </style>
+    <div id="before"></div>
+    <div id="after"></div>
+    <div id="grabber"></div>
+    <script>
+        const body = document.querySelector("body");
+        const grabber = document.querySelector("#grabber");
+        const before = document.querySelector("#before");
+        const after = document.querySelector("#after");
+        const urlParams = new URLSearchParams(window.location.search);
+        const beforeUrl = urlParams.get('before');
+        const afterUrl = urlParams.get('after');
+
+        before.style.backgroundImage = `url(${beforeUrl})`;
+        after.style.backgroundImage = `url(${afterUrl})`;
+
+        function mouseMoveWhilstDown(target, whileMove) {
+            const endMove = function () {
+                window.removeEventListener('mousemove', whileMove);
+                window.removeEventListener('mouseup', endMove);
+            };
+
+            target.addEventListener('mousedown', function (event) {
+                event.stopPropagation(); // remove if you do want it to propagate ..
+                window.addEventListener('mousemove', whileMove);
+                window.addEventListener('mouseup', endMove);
+            });
+        }
+
+        // TODO - Click to restore to center
+        // grabber.addEventListener('click', () => {
+        //     body.style.setProperty('--position', '50%');
+        // })
+
+        mouseMoveWhilstDown(grabber, (event) => {
+            const screenWidth = window.screen.availWidth;
+            const x = event.screenX;
+            const percentage = (x / screenWidth) * 100;
+
+            body.style.setProperty('--position', `${percentage}%`);
+        });
+    </script>
+</body>
+</html>
