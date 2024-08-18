@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <title>Timer</title>
+</head>
+<body>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            inset: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            font-family: "Inter", sans-serif;
+            transition: background-color 0.5s ease;
+        }
+
+        #timer {
+            display: none;
+            font-size: 4rem;
+        }
+
+        button {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+
+            svg {
+                width: 4rem;
+                height: 4rem;
+            }
+        }
+    </style>
+
+    <audio id="myAudio" src="interface-soft-click-131438.mp3"></audio>
+    <div id="timer">0</div>
+    <button id="startButton">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M112 111v290c0 17.44 17 28.52 31 20.16l247.9-148.37c12.12-7.25 12.12-26.33 0-33.58L143 90.84c-14-8.36-31 2.72-31 20.16z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/></svg>
+    </button>
+
+    <script>
+        const timerElement = document.getElementById('timer');
+        const startButton = document.getElementById('startButton');
+        const audio = document.getElementById('myAudio'); // Reference to the audio element
+
+        const cycleTime = 4; // 4 seconds for each step
+        const restTime = 5; // 4-second wait between cycles
+        const cycles = 10; // Total number of cycles
+        const steps = [
+            { color: 'green', duration: cycleTime },
+            { color: 'red', duration: cycleTime },
+            { color: 'orange', duration: cycleTime }
+        ];
+
+        function runCycle() {
+            let currentCycle = 0;
+            let stepIndex = 0;
+            let count = 1;
+
+
+            audio.playbackRate = 2.0; // Change this value to adjust speed
+            audio.play(); // Start the audio when the timer starts
+
+            function setIntervalAndExecute(fn, t) {
+                fn();
+                return(setInterval(fn, t));
+            }
+
+            const intervalId = setIntervalAndExecute(() => {
+                if (stepIndex === 0 && count === 1) {
+                    timerElement.style.display = 'block';
+                    startButton.style.display = 'none';
+                }
+
+                // Display the timer and set background color
+                document.body.style.backgroundColor = steps[stepIndex].color;
+                timerElement.textContent = count;
+
+                // Increment count or move to the next step
+                if (count === cycleTime) {
+                    count = 1;
+                    stepIndex++;
+                } else {
+                    count++;
+                }
+
+                // Move to the next cycle or wait phase
+                if (stepIndex === steps.length) {
+                    stepIndex = 0;
+                    currentCycle++;
+
+                    // Wait between cycles with a gray background
+                    if (currentCycle < cycles) {
+                        clearInterval(intervalId);
+                        setTimeout(() => {
+                            document.body.style.backgroundColor = 'gray';
+                            timerElement.textContent = 'And now wait';
+                            setTimeout(runCycle, restTime * 1000); // Start next cycle after rest
+                        }, 1000);
+                    } else {
+                        clearInterval(intervalId);
+                        document.body.style.backgroundColor = 'white';
+                        startButton.style.display = 'block';
+                        timerElement.style.display = 'none';
+                    }
+                }
+            }, 1000);
+        }
+
+        startButton.addEventListener('click', runCycle);
+    </script>
+</body>
+</html>
