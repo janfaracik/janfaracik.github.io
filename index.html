@@ -85,19 +85,16 @@
             if (isThirdWeekOfDecember) {
                 weatherIcon.innerHTML = snowSvg;
                 weatherDetail.innerText = `It's probably snowing`;
-                return "snow";
             } else if (isMiddleWeek) {
                 weatherIcon.innerHTML = sunSvg;
                 weatherDetail.innerText = `It's probably sunny`;
-                return "sun";
             } else {
                 weatherIcon.innerHTML = rainSvg;
                 weatherDetail.innerText = `It's probably raining`;
-                return "rain";
             }
         }
 
-        console.log(getWeatherString());
+        getWeatherString();
     </script>
 </body>
 </html>
