@@ -4,7 +4,7 @@
 :root {
     --color: hsl(200, 15%, 20%);
     --background: hsl(200, 15%, 90%);
-    --gradient: linear-gradient(45deg, #9599E2, #FBAB7E);
+    --gradient: linear-gradient(45deg, #4653ff, #ff843f);
     --transition: cubic-bezier(0, 0.68, 0.5, 1.5);
 }
 
