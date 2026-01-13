@@ -11,7 +11,7 @@
 @media (prefers-color-scheme: dark) {
     :root {
         --color: hsl(200, 10%, 80%);
-        --background: hsl(200, 10%, 5%);
+        --background: hsl(200, 10%, 5.5%);
         --gradient: linear-gradient(45deg, #C850C0, #FFCC70);
     }
 }
@@ -129,23 +129,36 @@ p {
         background-size: 60%;
         background-position: center;
         background-repeat: no-repeat;
-        box-shadow: 0 2px 5px rgba(0 0 0 / 0.1), inset 0 2px 2px rgba(255 255 255 / 0.1), inset 0 10px 10px rgba(255 255 255 / 0.05);
+        box-shadow: 0 2px 5px rgba(0 0 0 / 0.1), inset 0 2px 2px rgba(255 255 255 / 0.1), inset 0 -2px 2px rgba(255 255 255 / 0.1), inset 0 10px 10px rgba(255 255 255 / 0.05);
     }
 
     &:hover {
-        scale: 1.2;
+        scale: 1.25;
         z-index: 1;
-        filter: brightness(1.1);
     }
 
     &:active {
-        scale: 1.1;
+        scale: 1.15;
+    }
+
+    &:nth-of-type(odd) {
+        rotate: 7.5deg;
+
+        &:hover, &:active {
+            rotate: -5deg;
+        }
+    }
+
+    &:nth-of-type(even) {
+        rotate: -5deg;
+
+        &:hover, &:active {
+            rotate: 7.5deg;
+        }
     }
 }
 
 .app-icon--github {
-    rotate: 7.5deg;
-
     &::before {
         background-color: #64188d;
         background-image: url("logo-github.svg");
@@ -153,8 +166,6 @@ p {
 }
 
 .app-icon--x {
-    rotate: -5deg;
-
     &::before {
         background-color: #111;
         background-image: url("logo-x.svg");
@@ -163,10 +174,15 @@ p {
 }
 
 .app-icon--linkedin {
-    rotate: 7.5deg;
-
     &::before {
         background-color: #0f4fb6;
         background-image: url("logo-linkedin.svg");
+    }
+}
+
+.app-icon--strava {
+    &::before {
+        background-color: #fc5200;
+        background-image: url("logo-strava.svg");
     }
 }
