@@ -145,12 +145,12 @@ p {
         rotate: 7.5deg;
 
         &:hover, &:active {
-            rotate: -5deg;
+            rotate: -7.5deg;
         }
     }
 
     &:nth-of-type(even) {
-        rotate: -5deg;
+        rotate: -7.5deg;
 
         &:hover, &:active {
             rotate: 7.5deg;
