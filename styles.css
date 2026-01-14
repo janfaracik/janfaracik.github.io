@@ -165,6 +165,22 @@ p {
     }
 }
 
+.app-icon--strava {
+    &::before {
+        background-color: #fc5200;
+        background-image: url("logo-strava.svg");
+    }
+}
+
+
+.app-icon--apple-music {
+    &::before {
+        background-color: #FA233B;
+        background-image: url("logo-apple-music.svg");
+        background-size: 75%;
+    }
+}
+
 .app-icon--x {
     &::before {
         background-color: #111;
@@ -177,12 +193,5 @@ p {
     &::before {
         background-color: #0f4fb6;
         background-image: url("logo-linkedin.svg");
-    }
-}
-
-.app-icon--strava {
-    &::before {
-        background-color: #fc5200;
-        background-image: url("logo-strava.svg");
     }
 }
