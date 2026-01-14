@@ -183,7 +183,7 @@ p {
 
 .app-icon--x {
     &::before {
-        background-color: #111;
+        background-color: #191919;
         background-image: url("logo-x.svg");
         background-size: 50%;
     }
