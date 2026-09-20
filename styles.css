@@ -200,17 +200,6 @@ p {
     }
 }
 
-.app-icon--x {
-    &::before {
-        background-color: #191919;
-    }
-
-    &::after {
-        background-image: url("logo-x.svg");
-        background-size: 50%;
-    }
-}
-
 .app-icon--linkedin {
     &::before {
         background-color: #0f4fb6;
